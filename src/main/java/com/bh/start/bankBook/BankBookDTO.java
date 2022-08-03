@@ -2,16 +2,16 @@ package com.bh.start.bankBook;
 
 public class BankBookDTO {
 	
-	private Integer BookNum;
+	private Long BookNum;
 	private String BookName;
-	private Integer BookRate;
+	private double BookRate;
 	private Integer BookSale;
 	
 	
-	public Integer getBookNum() {
+	public Long getBookNum() {
 		return BookNum;
 	}
-	public void setBookNum(Integer bookNum) {
+	public void setBookNum(Long bookNum) {
 		BookNum = bookNum;
 	}
 	public String getBookName() {
@@ -20,10 +20,10 @@ public class BankBookDTO {
 	public void setBookName(String bookName) {
 		BookName = bookName;
 	}
-	public Integer getBookRate() {
+	public double getBookRate() {
 		return BookRate;
 	}
-	public void setBookRate(Integer bookRate) {
+	public void setBookRate(double bookRate) {
 		BookRate = bookRate;
 	}
 	public Integer getBookSale() {
