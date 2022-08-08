@@ -1,4 +1,4 @@
-package com.bh.start.bank;
+package com.bh.start.bankMember;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

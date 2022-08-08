@@ -2,8 +2,6 @@ package com.bh.start.bankBook;
 
 import java.util.ArrayList;
 
-import com.bh.start.bank.BankMembersDTO;
-
 public interface BookDAO {
 	
 	
