@@ -1,4 +1,4 @@
-package com.bh.start.bank;
+package com.bh.start.bankMember;
 
 public class BankMembersDTO {
 

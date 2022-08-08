@@ -53,7 +53,7 @@ public class BankBookDAO implements BookDAO {
 		BankBookDTO bankbookDTO = new BankBookDTO();
 		
 		Connection con = DBConnector.getConnection();
-		String sql = ""
+		String sql = "kk";
 		PreparedStatement st = con.prepareStatement(sql);
 		
 		int result = st.executeUpdate();
