@@ -1,11 +1,15 @@
 package com.bh.start.bankMember;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 //이 클래스틑 Controller 역할, Container에게 이 클래스의 객체 생성을 위임
@@ -82,10 +86,30 @@ public class MemberController {
 		
 	BankMembersDAO bankMembersDAO = new BankMembersDAO();
 	int result = bankMembersDAO.setJoin(bankMembersDTO);
+	System.out.println(result==1);
 	
-	return "member/join";
-		
-	}	
+	return "member/join";	
+	}
+	
+	@RequestMapping(value = "search", method =RequestMethod.GET)
+	public void getSearchByID () throws Exception {
+		//ModelAndView 리턴하는 방법
+		//ModelAndView mv = new ModelAndView();
+		//mv.setView("member/view");
+		//return.mv;
+	}
+	
+	@RequestMapping(value="search", method=RequestMethod.POST)
+	public String getSearchByID(String search, Model model) throws Exception{
+		BankMembersDAO bankMembersDAO = new BankMembersDAO();
+		ArrayList<BankMembersDTO> ar = bankMembersDAO.getSearchByID(null);
+		model.addAttribute("list", ar);
+		return "member/list";
+	}
+	
+	
+	
+	
 	
 	
 }
