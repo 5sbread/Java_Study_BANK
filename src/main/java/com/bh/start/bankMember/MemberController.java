@@ -88,6 +88,8 @@ public class MemberController {
 	int result = bankMembersDAO.setJoin(bankMembersDTO);
 	System.out.println(result==1);
 	
+	//로그인폼 페이지로 이동
+	//redirect
 	return "member/join";	
 	}
 	

@@ -14,10 +14,15 @@ public class BankBookController {
 	
 	// /bankbook/add POST
 	// name, rate
-	public void add(BankBookDTO bankBookDTO) throws Exception{
+	@RequestMapping(value="add", method=RequestMethod.POST)
+	public ModelAndView add(BankBookDTO bankBookDTO) throws Exception{
+		ModelAndView mv = new ModelAndView();
 		System.out.println(bankBookDTO.getBookName());
 		System.out.println(bankBookDTO.getBookRate());
-		
+		BankBookDAO bankBookDAO = new BankBookDAO();
+		//등록 후 list 페이지로 이동
+		mv.setViewName("redirect:./list");
+		return mv;
 	}
 	
 	

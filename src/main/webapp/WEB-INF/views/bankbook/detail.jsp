@@ -45,5 +45,11 @@
 	<%}else {%>
 		<h3>NO DATA</h3>
 	<%} %>	
+	
+	<a href="./bankbook/detail"></a>
+	<a href=""></a>
+	
+	
+	
 </body>
 </html>
