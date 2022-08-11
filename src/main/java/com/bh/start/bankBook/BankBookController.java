@@ -12,6 +12,19 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value="/bankbook/*")
 public class BankBookController {
 
+	
+	
+	@RequestMapping(value="update", method=RequestMethod.GET)
+	public void update()throws Exception{
+		
+		
+		
+		
+		
+	}
+	
+	
+	
 	// /bankbook/add POST
 	// name, rate
 	@RequestMapping(value="add", method=RequestMethod.POST)
