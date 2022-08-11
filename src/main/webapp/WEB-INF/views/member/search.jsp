@@ -21,6 +21,11 @@
 			<button type="submit">button</button>
 			<!-- ㄴ 타입 생략시 기본은 submit -->
 		</form>
+		
+		<form action="./search" method="post">
+			<input type="text" name="">
+			<button type="submit">Search</button>
+		</form>
 
 </body>
 </html>

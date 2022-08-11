@@ -1,11 +1,11 @@
 <%@page import="com.bh.start.bankBook.BankBookDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+
 <%
 	BankBookDTO bankBookDTO = (BankBookDTO)request.getAttributeNames();
 %>    
-    
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,9 +14,9 @@
 </head>
 <body>
 	<h1>Bank detail</h1>
-	
+
 	<% if(bankBookDTO != null) {%>
-	
+
 	<!-- 상대 -->
 	<a href="../member/login">Login</a>
 	<!-- 절대 -->
@@ -41,9 +41,15 @@
 				</td>
 			</tr>
 		</table>
-		
+
 	<%}else {%>
 		<h3>NO DATA</h3>
 	<%} %>	
+
+	<a href="./bankbook/detail"></a>
+	<a href=""></a>
+
+
+
 </body>
-</html>
+</html> 
