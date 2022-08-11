@@ -11,16 +11,26 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping(value="/bankbook/*")
 public class BankBookController {
-
+	
+	public 
+	
+	
+	
+	@RequestMapping(value="update", method=RequestMethod.POST)
+	public String update(BankBookDTO bankBookDTO) throws Exception{
+		BankBookDAO bankBookDAO = new BankBookDAO();
+		int reslut = bankBookDAO.setUpdate(bankBookDTO);
+		
+		return "redirect:./detail?bookNum="+bankBookDTO.getBookNum();
+	}
 	
 	
 	@RequestMapping(value="update", method=RequestMethod.GET)
-	public void update()throws Exception{
-		
-		
-		
-		
-		
+	public void update(BankBookDTO bankBookDTO, Model model)throws Exception{
+		BankBookDAO bankBookDAO = new BankBookDAO();
+		System.out.println(bankBookDTO.getBookNum());
+		bankBookDTO = bankBookDAO.getDetail(bankBookDTO);
+		int reslut = bankBookDAO.setUpdate(bankBookDTO);
 	}
 	
 	

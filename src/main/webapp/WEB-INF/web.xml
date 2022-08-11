@@ -9,7 +9,7 @@
 		<init-param>
 			<parma-name>encoding</parma-name>
 			<param-value>UTF-8</param-value>
-		</init-param>
+			</init-param>
 		<filter-mapping>
 	      <filter-name>encode</filter-name>
 	      <url-pattern>/*</url-pattern>

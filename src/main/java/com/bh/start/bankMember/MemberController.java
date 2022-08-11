@@ -24,16 +24,24 @@ public class MemberController {
 	@RequestMapping(value = "/member/*")
 	public String login() {
 		System.out.println("로그인 실행");
-
 		return "member/login";
 	}
 
+	@RequestMapping(value="", method=RequestMethod.POST)
+	public String login(BankMembersDTO bankMembersDTO, Model model) throws Exception{
+		
+		
+		
+	}
+	
+	
+	
+	
 //==============================================	
 	// join /member/join
 	@RequestMapping(value = "/member/join", method=RequestMethod.GET)
 	public String join() throws Exception {
 		System.out.println("회원가입 GET 실행");
-
 		return "member/join";
 	}
 

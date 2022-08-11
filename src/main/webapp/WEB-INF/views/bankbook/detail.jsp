@@ -65,7 +65,8 @@
 	<a href="../member/login">Login</a>
 	<a href="/member/join">Join</a>
 	<a href="./list">리스트보기</a>
-	<a href="./update">수정</a>
+	<a href="./update?BookNum=${dto.BookNum}">수정</a>
+	<a href="./delete?BookNum=${dto.BookNum}">삭제</a>
 
 
 

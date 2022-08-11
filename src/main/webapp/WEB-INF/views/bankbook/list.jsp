@@ -37,14 +37,22 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
+			<c:forEach items="${list}" var="dto">
+				<tr>
+					<td><a href="./detail?BookNum=${dto.BookNum}">${dto.BookNum}</a></td>
+					<td><a href="./detail?BookRate=${dto.BookRate}">${dto.BookRate}</a></td>
+				</tr>
+			</c:forEach>
+			
+<!-- 			<tr>
 				<td>Name1</td>
 				<td>0.012</td>
 			</tr>
 			<tr>
 				<td>Name2</td>
 				<td>3.14</td>
-			</tr>
+			</tr> -->
+			
 		</tbody>
 			<% for(BankBookDTO bankBookDTO:ar){ %>
 				<tr>

@@ -9,14 +9,18 @@
 <body>	
 	<h1>BAKBOOK UPDATE PAGE</h1>
 	
+	<form action="">
+		<input type="hidden" name="BookNum" readonly="readonly" value="${dto.BookNum}">
 		<div>
-			Name : <input type="text" name="bookName">
+			Name : <input type="text" name="BookName" value="${dto.BookName}">
 		</div>
 		<div>
-			R>ate <input type="text" name ="bookRate">
+			Rate : <input type="text" name ="BookRate" value="${dto.BookRate}">
 		</div>
 		
-		<input type="submit", name="">
-		<buttom name="">
+		<input type="submit", name="수정">
+		<button type="submit">수정</button>
+		
+	</form>	
 </body>
 </html>
