@@ -1,6 +1,11 @@
 <%@page import="com.bh.start.bankBook.BankBookDAO"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%
+	ArrayList<BankMembersDTO> ar = (ArrayList<BankMembersDTO>) request.getAttribute("list");
+%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,20 +13,28 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<thead>
-		<tr>
-			<th>ID</th>
-			<th>PW</th>
-			<th></th>
-
-			<%BankBookDAO bankBookDAO = new BankBookDAO; %>
-			<td><a href="./detail?bookNum"<%= bankBookDAO.getDetail(bankBookDTO);></a></td>
-
-		</tr>
-
-
-
+	<h1>Member List Page</h1>
+	
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Email</th>				
+				<th>Phone</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% for(BankMembersDTO bankMembersDTO:ar){ %>
+			<tr>
+				<td><%= bankMembersDTO.getUsername() %> </td>
+				<td><%= bankMembersDTO.getName() %> </td>
+				<td><%= bankMembersDTO.getEmail() %> </td>
+				<td><%= bankMembersDTO.getPhone() %> </td>
+			</tr>
+			<%} %>
+		</tbody>
+	</table>
 
 </body>
-</html> 
+</html>

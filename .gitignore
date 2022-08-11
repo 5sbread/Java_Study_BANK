@@ -122,5 +122,6 @@ $RECYCLE.BIN/
 # DB Connector
 # 클래스명
 DBConnector.java
+target/
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,eclipse,java
