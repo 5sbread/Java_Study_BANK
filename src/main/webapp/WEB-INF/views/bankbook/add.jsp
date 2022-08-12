@@ -9,7 +9,7 @@
 <body>
 	<h1>Add Page</h1>
 
-	<form action="./add" method="post">
+	<form action="./add.bh" method="post">
 		<div>
 			Name : <inqut type="text" name="BookName">
 		</div>

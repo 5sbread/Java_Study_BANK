@@ -1,4 +1,4 @@
-<%@page import="com.bh.start.bankBook.BankBookDAO"%>
+<%@page import="com.bh.start.bankBook.BankBookDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -6,7 +6,7 @@
     
     
 <%
-	ArrayList<BankMembersDTO> ar = (ArrayList<BankMembersDTO>) request.getAttribute("list")
+	ArrayList<BankBookDTO> ar = (ArrayList<BankBookDTO>)request.getAttribute("list");
 %>    
 <!DOCTYPE html>
 <html>

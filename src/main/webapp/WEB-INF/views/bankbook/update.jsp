@@ -9,7 +9,7 @@
 <body>	
 	<h1>BAKBOOK UPDATE PAGE</h1>
 	
-	<form action="">
+	<form action="./update.bh" method="post">
 		<input type="hidden" name="BookNum" readonly="readonly" value="${dto.BookNum}">
 		<div>
 			Name : <input type="text" name="BookName" value="${dto.BookName}">

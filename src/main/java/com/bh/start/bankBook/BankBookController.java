@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value="/bankbook/*")
 public class BankBookController {
 	
-	public 
+	//public 
 	
 	
 	

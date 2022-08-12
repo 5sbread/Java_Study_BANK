@@ -54,7 +54,7 @@
 			</tr> -->
 			
 		</tbody>
-			<% for(BankBookDTO bankBookDTO:ar){ %>
+			<% for(BankBookDTO bankBookDTO:ar)% {%>
 				<tr>
 										<!-- bookNum🔘=🔘 | 0자리에 띄어쓰기 하면 안됨 -->
 					<td><a href="./detail?bookNum=<%= bankBookDTO.getBookNum()%>"><%= bankBookDTO.getBookName() %></a></td>

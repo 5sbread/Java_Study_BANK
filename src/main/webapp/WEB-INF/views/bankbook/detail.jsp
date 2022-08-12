@@ -59,14 +59,14 @@
 --%>
 
 
-	<a href="./bankbook/detail"></a>
+	<a href="./bankbook/detail.bh"></a>
 	<a href=""></a>
 
-	<a href="../member/login">Login</a>
-	<a href="/member/join">Join</a>
-	<a href="./list">리스트보기</a>
-	<a href="./update?BookNum=${dto.BookNum}">수정</a>
-	<a href="./delete?BookNum=${dto.BookNum}">삭제</a>
+	<a href="../member/login.bh">Login</a>
+	<a href="/member/join.bh">Join</a>
+	<a href="./list.bh">리스트보기</a>
+	<a href="./update?BookNum=${dto.BookNum}.bh">수정</a>
+	<a href="./delete?BookNum=${dto.BookNum}.bh">삭제</a>
 
 
 

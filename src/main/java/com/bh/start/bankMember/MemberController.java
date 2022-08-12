@@ -3,6 +3,7 @@ package com.bh.start.bankMember;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-//이 클래스틑 Controller 역할, Container에게 이 클래스의 객체 생성을 위임
+//이 클래스는 Controller 역할, Container에게 이 클래스의 객체 생성을 위임
 public class MemberController {
 	//servlet 아님 순수 java 클래스
 
@@ -21,16 +22,24 @@ public class MemberController {
 
 	//value에는 꼭 절대경로
 	//  /member/login 시 실행하는 메서드
-	@RequestMapping(value = "/member/*")
+	@RequestMapping(value = "login", method=RequestMethod.GET)
 	public String login() {
 		System.out.println("로그인 실행");
 		return "member/login";
 	}
 
-	@RequestMapping(value="", method=RequestMethod.POST)
-	public String login(BankMembersDTO bankMembersDTO, Model model) throws Exception{
-		
-		
+	@RequestMapping(value="login", method=RequestMethod.POST)
+	public String login(BankMembersDTO bankMembersDTO) throws Exception{
+		System.out.println("DB에 로그인 실행");
+		//redirect : 다시 접속해야 할 URL 주소
+		return "redirect:../";
+	}
+	
+//로그아웃
+	@RequestMapping(value="logout", method=RequestMethod.GET)
+	public String logout(HttpSession session) throws Exception{
+		session.invalidate();
+		return "redirect:../";
 		
 	}
 	
@@ -39,10 +48,10 @@ public class MemberController {
 	
 //==============================================	
 	// join /member/join
-	@RequestMapping(value = "/member/join", method=RequestMethod.GET)
+	@RequestMapping(value = "/member/join.bh", method=RequestMethod.GET)
 	public String join() throws Exception {
 		System.out.println("회원가입 GET 실행");
-		return "member/join";
+		return "member/join"; //JSP 라서 확장자 X
 	}
 
 	// join /member/join	
@@ -98,10 +107,10 @@ public class MemberController {
 
 	//로그인폼 페이지로 이동
 	//redirect
-	return "member/join";	
+	return "member/join.bh";	
 	}
 
-	@RequestMapping(value = "search", method =RequestMethod.GET)
+	@RequestMapping(value = "./search.bh", method =RequestMethod.GET)
 	public void getSearchByID () throws Exception {
 		//ModelAndView 리턴하는 방법
 		//ModelAndView mv = new ModelAndView();
@@ -109,12 +118,12 @@ public class MemberController {
 		//return.mv;
 	}
 
-	@RequestMapping(value="search", method=RequestMethod.POST)
+	@RequestMapping(value="./search.bh", method=RequestMethod.POST)
 	public String getSearchByID(String search, Model model) throws Exception{
 		BankMembersDAO bankMembersDAO = new BankMembersDAO();
 		ArrayList<BankMembersDTO> ar = bankMembersDAO.getSearchByID(null);
 		model.addAttribute("list", ar);
-		return "member/list";
+		return "member/list.bh";
 	}
 
 
