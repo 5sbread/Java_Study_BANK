@@ -39,33 +39,14 @@
 		<tbody>
 			<c:forEach items="${list}" var="dto">
 				<tr>
-					<td><a href="./detail?BookNum=${dto.BookNum}">${dto.BookNum}</a></td>
-					<td><a href="./detail?BookRate=${dto.BookRate}">${dto.BookRate}</a></td>
+					<td><a href="./detail.iu?bookNum=${dto.bookNum}">${dto.bookName}</a></td>
+					<td>${dto.bookRate}</td>
 				</tr>
 			</c:forEach>
-			
-<!-- 			<tr>
-				<td>Name1</td>
-				<td>0.012</td>
-			</tr>
-			<tr>
-				<td>Name2</td>
-				<td>3.14</td>
-			</tr> -->
-			
 		</tbody>
-			<% for(BankBookDTO bankBookDTO:ar)% {%>
-				<tr>
-										<!-- bookNum🔘=🔘 | 0자리에 띄어쓰기 하면 안됨 -->
-					<td><a href="./detail?bookNum=<%= bankBookDTO.getBookNum()%>"><%= bankBookDTO.getBookName() %></a></td>
-					<td><%= bankBookDTO.getBookRate() %></td>
-				</tr>
-			<%} %>	
 	</table>
-
-
-
-<a href="detail">bank detail</a>
+	
+	<a href="./add.bh">상품 등록</a>
 
 </body>
 </html>

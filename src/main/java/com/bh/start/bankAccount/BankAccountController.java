@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.bh.start.bankBook.BankBookDAO;
+import com.bh.start.bankMember.BankMembersDTO;
 
 @Controller
  public class BankAccountController {
@@ -18,12 +19,14 @@ import com.bh.start.bankBook.BankBookDAO;
 	}
 	
 	@RequestMapping(value="add.bh", method=RequestMethod.GET)
-	public String add() {
+	public String add(BankAccountDTO bankAccountDTO, HttpSession session) throws Exception {
 		System.out.println("BankAccount Add");
+		System.out.println(bankAccountDTO.getAccountNum());
 		
-		session.invalidate();
-		return "redirect:../";
+		BankMembersDTO bankMembersDTO = (BankMembersDTO)session.getAttribute("member");
+		bankAccountDTO.setUserName(bankMembersDTO.getUsername());
 		
-		
+		int result = this.bankAccountDAO.add(bankAccountDTO);
+		return "redirect:../bankbook/list.bh";
 	}
 }
