@@ -9,6 +9,35 @@ import com.bh.start.util.DBConnector;
 
 public class BankBookDAO implements BookDAO {
 
+	public int setDelete(BankBookDTO bankBookDTO) throws Exception{
+		Connection con = DBConnector.getConnection();
+		String sql = "DELETE BANKBOOK WHERE BOOKNUM=?";
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setLong(1, bankBookDTO.getBookNum());
+		
+		int result = st.executeUpdate();
+		DBConnector.disConnect(st, con);
+		return result;
+	}
+	
+	
+	
+	
+	@Override
+	public int setUpdate(BankBookDTO bankBookDTO) throws Exception{
+	
+		Connection con = DBConnector.getConnection();
+		String sql = "UPDATE BANKBOOK SET BOOKNAME=?, BOOKRATE=? WHERE BOOKRATE=?";
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setLong(1, bankBookDTO.getBookNum());
+		ResultSet rs = st.executeQuery();
+		
+		
+		DBConnector.disConnect(rs, st, con);	
+		return 0;
+	}
+
+//----------------------------------	
 	@Override
 	public int setBankBook(BankBookDTO bankBookDTO) throws Exception {
 		
@@ -24,7 +53,8 @@ public class BankBookDAO implements BookDAO {
 		DBConnector.disConnect(st, con);
 		return result;
 	}
-
+	
+//----------------------------------
 	@Override
 	public ArrayList<BankBookDTO> getList() throws Exception {
 		
