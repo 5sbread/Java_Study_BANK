@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class BoardDTO {
 	
-	private Long boardNum;
+	private Long boardIndex;
 	private String boardTitle;
 	private String boardMain;
 	private String boardName;
@@ -15,10 +15,10 @@ public class BoardDTO {
 	
 	
 	public Long getBoardNum() {
-		return boardNum;
+		return boardIndex;
 	}
-	public void setBoardNum(Long boardNum) {
-		this.boardNum = boardNum;
+	public void setBoardNum(Long boardIndex) {
+		this.boardIndex = boardIndex;
 	}
 	public String getBoardTitle() {
 		return boardTitle;
