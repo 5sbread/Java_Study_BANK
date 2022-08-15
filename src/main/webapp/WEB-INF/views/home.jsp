@@ -26,6 +26,8 @@
 
 	<a href="./bankbook/list.bh">상품리스트</a>
 	
+	<a href="./board/list.bh">글 목록 보기</a>
+	
 <!--
 	<a href="./update.iu?BookNum=${dto.BookNum}">수정</a>
 	<a href="./delete.iu?BookNum=${dto.BookNum}">삭제</a>
