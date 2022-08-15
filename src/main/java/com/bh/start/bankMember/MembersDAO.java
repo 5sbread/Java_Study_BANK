@@ -1,5 +1,7 @@
 package com.bh.start.bankMember;
 
+import java.util.ArrayList;
+
 public interface MembersDAO {
 
 	// 인터페이스
@@ -9,7 +11,7 @@ public interface MembersDAO {
 	
 	public int setJoin (BankMembersDAO bankMembersDAO) throws Exception;
 	
-	
+	public ArrayList<BankMembersDTO> getSearchByID(String search) throws Exception;
 	
 	
 	
