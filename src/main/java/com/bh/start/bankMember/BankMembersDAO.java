@@ -7,8 +7,11 @@ import java.util.ArrayList;
 
 import javax.naming.spi.DirStateFactory.Result;
 
+import org.springframework.stereotype.Repository;
+
 import com.bh.start.util.DBConnector;
 
+@Repository
 public class BankMembersDAO implements MembersDAO{
 	
 	//로그인

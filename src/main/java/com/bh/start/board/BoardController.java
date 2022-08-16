@@ -1,4 +1,4 @@
-package com.bh.board;
+package com.bh.start.board;
 
 public class BoardController {
 

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,9 +13,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.bh.start.bankAccount.BankAccountController;
+
 @Controller
 //이 클래스는 Controller 역할, Container에게 이 클래스의 객체 생성을 위임
 public class MemberController {
+	
+	private BankMembersDAO bankMembersDAO;
+	
+	@Autowired
+	public void BankAccountController(BankMembersDAO bankMembersDAO) {
+		this.bankMembersDAO = bankMembersDAO;
+	}
+	
+	
 	//servlet 아님 순수 java 클래스
 
 	//annotation
@@ -101,7 +113,7 @@ public class MemberController {
 	public String join(BankMembersDTO bankMembersDTO) throws Exception {
 	System.out.println("회원가입 POST 실행");
 
-	BankMembersDAO bankMembersDAO = new BankMembersDAO();
+//	BankMembersDAO bankMembersDAO = new BankMembersDAO();
 	int result = bankMembersDAO.setJoin(bankMembersDTO);
 	System.out.println(result==1);
 
@@ -120,7 +132,7 @@ public class MemberController {
 
 	@RequestMapping(value="./search.bh", method=RequestMethod.POST)
 	public String getSearchByID(String search, Model model) throws Exception{
-		BankMembersDAO bankMembersDAO = new BankMembersDAO();
+//		BankMembersDAO bankMembersDAO = new BankMembersDAO();
 		ArrayList<BankMembersDTO> ar = bankMembersDAO.getSearchByID(null);
 		model.addAttribute("list", ar);
 		return "member/list.bh";
