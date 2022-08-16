@@ -32,7 +32,6 @@
 	<a href="./update.iu?BookNum=${dto.BookNum}">수정</a>
 	<a href="./delete.iu?BookNum=${dto.BookNum}">삭제</a>
 	
-<c:if test="${not empty sessionScope. }"></c:if>	
 	<a href="?bookNum=${dto.bookNum }">가입하기</a>
 
 <a href="./bankbook/detail?booknum=1">Detail</a>

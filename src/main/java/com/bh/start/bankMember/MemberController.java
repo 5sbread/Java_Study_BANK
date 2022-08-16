@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,12 +20,17 @@ import com.bh.start.bankAccount.BankAccountController;
 //이 클래스는 Controller 역할, Container에게 이 클래스의 객체 생성을 위임
 public class MemberController {
 	
-	private BankMembersDAO bankMembersDAO;
+//	@Autowired
+//	//ㄴ setter, 생성자가 필요 없어짐
+//	@Qualifier("myDAO")
+//	private BankMembersDAO bankMembersDAO;
 	
-	@Autowired
-	public void BankAccountController(BankMembersDAO bankMembersDAO) {
-		this.bankMembersDAO = bankMembersDAO;
-	}
+	private BankMembersService bankMembersService;
+	
+//	@Autowired
+//	public void BankAccountController(BankMembersDAO bankMembersDAO) {
+//		this.bankMembersDAO = bankMembersDAO;
+//	}
 	
 	
 	//servlet 아님 순수 java 클래스
@@ -114,12 +120,12 @@ public class MemberController {
 	System.out.println("회원가입 POST 실행");
 
 //	BankMembersDAO bankMembersDAO = new BankMembersDAO();
-	int result = bankMembersDAO.setJoin(bankMembersDTO);
+	int result = bankMembersService.setJoin(bankMembersDAO);
 	System.out.println(result==1);
 
 	//로그인폼 페이지로 이동
 	//redirect
-	return "member/join.bh";	
+	return "redirect:./member/login.bh";	
 	}
 
 	@RequestMapping(value = "./search.bh", method =RequestMethod.GET)
@@ -133,7 +139,7 @@ public class MemberController {
 	@RequestMapping(value="./search.bh", method=RequestMethod.POST)
 	public String getSearchByID(String search, Model model) throws Exception{
 //		BankMembersDAO bankMembersDAO = new BankMembersDAO();
-		ArrayList<BankMembersDTO> ar = bankMembersDAO.getSearchByID(null);
+		ArrayList<BankMembersDTO> ar = bankMembersService.getSearchByID(search);
 		model.addAttribute("list", ar);
 		return "member/list.bh";
 	}

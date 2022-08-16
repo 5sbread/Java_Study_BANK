@@ -11,7 +11,8 @@ import org.springframework.stereotype.Repository;
 
 import com.bh.start.util.DBConnector;
 
-@Repository
+@Repository("myDAO")
+		// ㄴ bean의 이름을 myDAO로 설정 (BankMembersDAO 아니고 myDAO가 됨)
 public class BankMembersDAO implements MembersDAO{
 	
 	//로그인
