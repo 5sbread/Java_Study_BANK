@@ -120,8 +120,8 @@ public class MemberController {
 	System.out.println("회원가입 POST 실행");
 
 //	BankMembersDAO bankMembersDAO = new BankMembersDAO();
-	int result = bankMembersService.setJoin(bankMembersDAO);
-	System.out.println(result==1);
+	//int result = bankMembersService.setJoin(bankMembersDAO);
+	//System.out.println(result==1);
 
 	//로그인폼 페이지로 이동
 	//redirect
