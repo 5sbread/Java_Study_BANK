@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.naming.spi.DirStateFactory.Result;
 
@@ -53,48 +54,48 @@ public class BankMembersDAO implements MembersDAO{
 	//회원가입
 	public int setJoin(BankMembersDTO bankMembersDTO) throws Exception{
 		
-		Connection con = DBConnector.getConnection();
-		
-		String sql = "INSERT INTO BANKMEMBERS VALUES(?,?,?,?,?)";
-		
-		PreparedStatement st = con.prepareStatement(sql);
-		
-		st.setString(1, bankMembersDTO.getUserName());
-		st.setString(2, bankMembersDTO.getPassword());
-		st.setString(3, bankMembersDTO.getName());
-		st.setString(4, bankMembersDTO.getEmail());
-		st.setString(5, bankMembersDTO.getPhone());
-		
-		int result = st.executeUpdate();
-		return result;
+//		Connection con = DBConnector.getConnection();
+//		
+//		String sql = "INSERT INTO BANKMEMBERS VALUES(?,?,?,?,?)";
+//		
+//		PreparedStatement st = con.prepareStatement(sql);
+//		
+//		st.setString(1, bankMembersDTO.getUserName());
+//		st.setString(2, bankMembersDTO.getPassword());
+//		st.setString(3, bankMembersDTO.getName());
+//		st.setString(4, bankMembersDTO.getEmail());
+//		st.setString(5, bankMembersDTO.getPhone());
+//		
+//		int result = st.executeUpdate();
+		return sqlSession.insert(NAMESPACE+"setJoin", bankMembersDTO);
 	}	
 //===================		
 		
-	public ArrayList<BankMembersDTO> getSearchByID(String search) throws Exception {
+	public List<BankMembersDTO> getSearchByID(String search) throws Exception {
 		
-		ArrayList<BankMembersDTO> ar = new ArrayList<BankMembersDTO>();
+//		ArrayList<BankMembersDTO> ar = new ArrayList<BankMembersDTO>();
+//		
+//		Connection con = DBConnector.getConnection();
+//		
+//		String sql = "SELECT * FROM BACKMEMBERS WHERE USERNAME LIKE ? ORDER BY USERNAME ASC";
+//		
+//		PreparedStatement st =con.prepareStatement(sql);
+//		
+//		st.setString(1, "%"+search+"%");
+//		
+//		ResultSet rs = st.executeQuery();
+//		
+//		while(rs.next()) {
+//			BankMembersDTO bankMembersDTO = new BankMembersDTO();
+//			bankMembersDTO.setUserName(rs.getString("USERNAME"));
+//			bankMembersDTO.setPassword(rs.getString("PASSWORD"));
+//			bankMembersDTO.setName(rs.getString("NAME"));
+//			bankMembersDTO.setEmail(rs.getString("EMAIL"));
+//			bankMembersDTO.setPhone(rs.getString("PHONE"));
+//			ar.add(bankMembersDTO);
+//		} //while
 		
-		Connection con = DBConnector.getConnection();
-		
-		String sql = "SELECT * FROM BACKMEMBERS WHERE USERNAME LIKE ? ORDER BY USERNAME ASC";
-		
-		PreparedStatement st =con.prepareStatement(sql);
-		
-		st.setString(1, "%"+search+"%");
-		
-		ResultSet rs = st.executeQuery();
-		
-		while(rs.next()) {
-			BankMembersDTO bankMembersDTO = new BankMembersDTO();
-			bankMembersDTO.setUserName(rs.getString("USERNAME"));
-			bankMembersDTO.setPassword(rs.getString("PASSWORD"));
-			bankMembersDTO.setName(rs.getString("NAME"));
-			bankMembersDTO.setEmail(rs.getString("EMAIL"));
-			bankMembersDTO.setPhone(rs.getString("PHONE"));
-			ar.add(bankMembersDTO);
-		} //while
-		
-		return ar;
+		return sqlSession.selectList(NAMESPACE+"getSearchByID", search);
 	}
 
 	@Override

@@ -25,7 +25,7 @@
 	<div>
 	    <br>
 	    이름 <br><input type="text" name="name"><br>
-	    번호 <br><input type="number" name="phone"><br>
+	    번호 <br><input type="number" name="phone" placeholder="전화번호 입력"><br>
 	    이메일 <br><input type="email" name="email"><br>
 	<br>
 	    광고성 정보 수신 동의 <input type="checkbox" name="agree"><br>
