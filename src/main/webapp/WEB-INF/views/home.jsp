@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <html>
@@ -12,6 +13,7 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
+
 
 <c:if test="${empty sessionScope.member}">
 	<a href="./member/login.bh">Login</a>
@@ -37,6 +39,7 @@
 
 <a href="./bankbook/detail?booknum=1">Detail</a>
 <a href="./bankbook/add">상품 등록</a> -->
+
 
 </body>
 </html>

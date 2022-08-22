@@ -17,7 +17,7 @@
 			Rate : <input type="text" name="BookRate">
 		</div>
 		<div>
-		
+
 		<!-- 제줄하는 버튼 만드는 법 2가지 -->		
 			<input type="submit" name="CREATE">
 		<!--<button type="submit">Add</button>  -->

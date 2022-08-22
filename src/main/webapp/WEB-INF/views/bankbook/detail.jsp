@@ -9,7 +9,6 @@
 	%>    
 --%>
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,14 +18,12 @@
 <body>
 	<h1>Bank detail</h1>
 
-
 <%--	<% if(BankBookDTO != null) {%>
 			<!-- 상대 -->
 			<a href="../member/login">Login</a>
 			<!-- 절대 -->
 			<a href="/member/join">join</a>
 --%>
-
 		<table border="1">
 			<tr>
 				<th>Num</th>
@@ -35,15 +32,15 @@
 				<th>Sale</th>
 			</tr>
 			<tr>
+
 				<td>${requestScope.dto.getBookName}</td>
 				<td>${trquestScope.dto.bookNum}</td>
 				<td>${dto.bookRate }</td>
 <%--			<td><%= bankBookDTO.getBookNum() %></td>
 				<td><%= bankBookDTO.getBookName() %></td>
 				<td><%= bankBookDTO.getBookRate() %></td> --%>
-
-
 <%--
+
 					<% if(bankBookDTO.getBookSale()==1){ %>
 						판매 중
 					<%	}else{ %>
@@ -68,7 +65,6 @@
 	<a href="./update?BookNum=${dto.BookNum}.bh">수정</a>
 	<a href="./delete?BookNum=${dto.BookNum}.bh">삭제</a>
 
-
-
 </body>
 </html> 
+

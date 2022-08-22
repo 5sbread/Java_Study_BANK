@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value="/bankbook/*")
 public class BankBookController {
 	
+=======
 	//public 
 	
 	
@@ -33,8 +34,6 @@ public class BankBookController {
 		int reslut = bankBookDAO.setUpdate(bankBookDTO);
 	}
 	
-	
-	
 	// /bankbook/add POST
 	// name, rate
 	@RequestMapping(value="add", method=RequestMethod.POST)
@@ -48,14 +47,12 @@ public class BankBookController {
 		return mv;
 	}
 
-
 	// /bankbook/add Get  /WEB-INF/views/bankbook/add.jsp
 	@RequestMapping("add")
 	public String add() throws Exception{
 		System.out.println("add 실행");
 		return "bankbook/add";
 	}
-
 
 	//요청 url과 return 주소값이 같을 때
 	// => return 없이 void 가능
@@ -85,5 +82,3 @@ public class BankBookController {
 		return mv;
 	}
 
-
-}
