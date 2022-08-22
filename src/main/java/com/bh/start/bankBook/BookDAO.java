@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public interface BookDAO {
 	
+	public int setUpdate(BankBookDTO bankBookDTO)throws Exception;
 	
 	//BankBook Table에 insert
 	//BookNum : 현재 시간을 밀리세컨즈로 변환해서 입력

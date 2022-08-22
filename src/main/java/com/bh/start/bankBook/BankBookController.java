@@ -12,6 +12,28 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value="/bankbook/*")
 public class BankBookController {
 	
+=======
+	//public 
+	
+	
+	
+	@RequestMapping(value="update", method=RequestMethod.POST)
+	public String update(BankBookDTO bankBookDTO) throws Exception{
+		BankBookDAO bankBookDAO = new BankBookDAO();
+		int reslut = bankBookDAO.setUpdate(bankBookDTO);
+		
+		return "redirect:./detail?bookNum="+bankBookDTO.getBookNum();
+	}
+	
+	
+	@RequestMapping(value="update", method=RequestMethod.GET)
+	public void update(BankBookDTO bankBookDTO, Model model)throws Exception{
+		BankBookDAO bankBookDAO = new BankBookDAO();
+		System.out.println(bankBookDTO.getBookNum());
+		bankBookDTO = bankBookDAO.getDetail(bankBookDTO);
+		int reslut = bankBookDAO.setUpdate(bankBookDTO);
+	}
+	
 	// /bankbook/add POST
 	// name, rate
 	@RequestMapping(value="add", method=RequestMethod.POST)
@@ -24,16 +46,14 @@ public class BankBookController {
 		mv.setViewName("redirect:./list");
 		return mv;
 	}
-	
-	
+
 	// /bankbook/add Get  /WEB-INF/views/bankbook/add.jsp
 	@RequestMapping("add")
 	public String add() throws Exception{
 		System.out.println("add 실행");
 		return "bankbook/add";
 	}
-	
-	
+
 	//요청 url과 return 주소값이 같을 때
 	// => return 없이 void 가능
 	@RequestMapping(value="list", method=RequestMethod.GET)
@@ -56,11 +76,9 @@ public class BankBookController {
 
 		mv.setViewName("bankbook/detail");
 		mv.addObject("DTO", bankBookDAO);
-		
+
 		//System.out.println("BookNum : "+booknum);
 		//return "bankbook/detail";
 		return mv;
 	}
-	
-	
-}
+

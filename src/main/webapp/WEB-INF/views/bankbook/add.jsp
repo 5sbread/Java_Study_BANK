@@ -8,8 +8,8 @@
 </head>
 <body>
 	<h1>Add Page</h1>
-	
-	<form action="./add" method="post">
+
+	<form action="./add.bh" method="post">
 		<div>
 			Name : <inqut type="text" name="BookName">
 		</div>
@@ -17,13 +17,14 @@
 			Rate : <input type="text" name="BookRate">
 		</div>
 		<div>
+
 		<!-- 제줄하는 버튼 만드는 법 2가지 -->		
 			<input type="submit" name="CREATE">
-<!--			<button type="submit">Add</button>  -->
+		<!--<button type="submit">Add</button>  -->
 		</div>
 	</form>
 
 
 
 </body>
-</html>
+</html> 

@@ -13,7 +13,8 @@
 <h1>Join Page</h1>
 
 <hr>
-	<form action="./join" method = "POST">
+	<form action="./join.bh" method = "POST">
+
 	<div>
 	아이디 <br><input type="text" name="username"> <input type="button" value="중복확인"><br>
 	<br>

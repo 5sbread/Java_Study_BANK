@@ -37,6 +37,7 @@
 			</tr>
 		</thead>
 		<tbody>
+
 			<tr>
 				<td>Name1</td>
 				<td>0.012</td>
@@ -58,6 +59,18 @@
 
 
 <a href="detail">bank detail</a>
+
+			<c:forEach items="${list}" var="dto">
+				<tr>
+					<td><a href="./detail.iu?bookNum=${dto.bookNum}">${dto.bookName}</a></td>
+					<td>${dto.bookRate}</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+	
+	<a href="./add.bh">상품 등록</a>
+
 
 </body>
 </html>
